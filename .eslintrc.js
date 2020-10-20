@@ -1,7 +1,7 @@
 module.exports = {
     extends: ["eta-dev"],
     env: {
-        mocha: true,
+        jest: true,
         node: true
     },
     parser: "esprima",
