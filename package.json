@@ -6,6 +6,7 @@
   "scripts": {
     "test": "jest --coverage",
     "test:prod": "npm run lint && npm run test -- --no-cache",
+    "test:watch": "jest --coverage --watch",
     "format": "prettier --write lib/**/*.js test/**/*.js",
     "lint": "eslint lib/**/*.js test/**/*.js --ext .js"
   },
