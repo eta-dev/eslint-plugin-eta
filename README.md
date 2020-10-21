@@ -1,5 +1,6 @@
-<h1 align="center">eslint-plugin-eta</h1>
-<h2 align="center">Lint your Eta templates with ease</h2>
+# eslint-plugin-eta
+
+> Lint your embeddable Eta templates with ease
 
 ### Installation
 Run `npm install --save-dev eslint-plugin-eta` to install this ESLint plugin.
