@@ -10,3 +10,5 @@ node_js:
   - '12'
 script:
   - yarn test:prod
+after_sucess:
+  - yarn run report-coverage

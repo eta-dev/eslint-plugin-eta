@@ -8,7 +8,8 @@
     "test:prod": "npm run lint && npm run test -- --no-cache",
     "test:watch": "jest --coverage --watch",
     "format": "prettier --write lib/**/*.js test/**/*.js",
-    "lint": "eslint lib/**/*.js test/**/*.js --ext .js"
+    "lint": "eslint lib/**/*.js test/**/*.js --ext .js",
+    "report-coverage": "cat ./coverage/lcov.info | coveralls"
   },
   "keywords": [
     "eslint",
@@ -22,6 +23,7 @@
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.5.0",
+    "coveralls": "^3.1.0",
     "eslint": "^7.11.0",
     "eslint-config-eta-dev": "^1.0.0",
     "eslint-plugin-import": "^2.22.1",
