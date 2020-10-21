@@ -2,7 +2,12 @@
 
 > Lint your embeddable Eta templates with ease
 
-<img src="https://img.shields.io/coveralls/github/eta-dev/eslint-plugin-eta?style=plastic" /><img src="https://img.shields.io/npm/v/eslint-plugin-eta" />
+<span align="center">
+
+[![Travis](https://img.shields.io/travis/com/eta-dev/eslint-plugin-eta/master.svg)](https://travis-ci.com/eta-dev/eslint-plugin-eta)
+[![Coveralls](https://img.shields.io/coveralls/eta-dev/eslint-plugin-eta.svg)](https://coveralls.io/github/eta-dev/eslint-plugin-eta)
+
+</span>
 
 ### Installation
 Run `npm install --save-dev eslint-plugin-eta` to install this ESLint plugin.
