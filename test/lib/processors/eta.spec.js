@@ -1,4 +1,3 @@
-const { expect } = require('chai')
 const processor = require('../../../lib/processors/eta')
 
 describe('processor', () => {
@@ -10,13 +9,13 @@ describe('processor', () => {
       processor.preprocess('')
     })
     it('should not ignore normal text', () => {
-      expect(processor.preprocess('Foo!')[0].text).to.equal('')
+      expect(processor.preprocess('Foo!')[0].text).toBe('')
     })
     it('should return an array', () => {
-      expect(typeof processor.preprocess('Foo!') === 'object')
+      expect(typeof processor.preprocess('Foo!')).toBe('object')
     })
     it('should properly preprocess', () => {
-      expect(processor.preprocess('Hello <%= it.name %>')[0].text).to.equal(
+      expect(processor.preprocess('Hello <%= it.name %>')[0].text).toBe(
         'it.name'
       )
     })
@@ -25,7 +24,7 @@ describe('processor', () => {
         processor.preprocess(
           "<% const name = 'bill'; %>\nHello <%= name %>.\nMy name is <%= it.name %>"
         )[0].text
-      ).to.equal("const name = 'bill';\nname\nit.name")
+      ).toBe("const name = 'bill';\nname\nit.name")
     })
   })
 })

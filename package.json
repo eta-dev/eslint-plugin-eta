@@ -4,9 +4,12 @@
   "description": "An ESLint plugin so you can lint Eta template files",
   "main": "lib/index.js",
   "scripts": {
-    "test": "nyc mocha test/**/*.spec.js",
+    "test": "jest --coverage",
+    "test:prod": "npm run lint && npm run test -- --no-cache",
+    "test:watch": "jest --coverage --watch",
     "format": "prettier --write lib/**/*.js test/**/*.js",
-    "lint": "eslint lib/**/*.js test/**/*.js --ext .js"
+    "lint": "eslint lib/**/*.js test/**/*.js --ext .js",
+    "report-coverage": "cat ./coverage/lcov.info | coveralls"
   },
   "keywords": [
     "eslint",
@@ -20,7 +23,7 @@
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.5.0",
-    "chai": "^4.2.0",
+    "coveralls": "^3.1.0",
     "eslint": "^7.11.0",
     "eslint-config-eta-dev": "^1.0.0",
     "eslint-plugin-import": "^2.22.1",
@@ -28,9 +31,15 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "eta": "^1.11.0",
-    "mocha": "^8.2.0",
-    "nyc": "^15.1.0",
+    "jest": "^26.6.0",
     "prettier": "^2.1.2",
     "typescript": "^4.0.3"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/test/"
+    ]
   }
 }

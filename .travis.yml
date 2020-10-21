@@ -9,4 +9,6 @@ node_js:
   - '10'
   - '12'
 script:
-  - yarn test
+  - yarn test:prod
+after_sucess:
+  - yarn run report-coverage
