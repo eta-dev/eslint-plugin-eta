@@ -2,6 +2,9 @@ const processor = require('../../../lib/processors/eta')
 
 describe('processor', () => {
   describe('preprocess', () => {
+    it('should be a function', () => {
+      expect(typeof processor.preprocess).toBe('function')
+    })
     it('should not crash', () => {
       processor.preprocess('Foo!')
     })
@@ -25,6 +28,11 @@ describe('processor', () => {
           "<% const name = 'bill'; %>\nHello <%= name %>.\nMy name is <%= it.name %>"
         )[0].text
       ).toBe("const name = 'bill';\nname\nit.name")
+    })
+  })
+  describe('postprocess', () => {
+    it('should be a function', () => {
+      expect(typeof processor.postprocess).toBe('function')
     })
   })
 })
